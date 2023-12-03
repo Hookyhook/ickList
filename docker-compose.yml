@@ -1,0 +1,10 @@
+services:
+  database_student:
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_USER: ickListBackend
+      MYSQL_DATABASE: ickList
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_PASSWORD: secret
