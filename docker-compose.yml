@@ -1,5 +1,5 @@
 services:
-  database_student:
+  icklist_database:
     image: mysql
     ports:
       - 3306:3306
@@ -8,3 +8,13 @@ services:
       MYSQL_DATABASE: ickList
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_PASSWORD: secret
+    restart: on-failure
+  icklist_backend:
+    network_mode: host
+    build:
+      dockerfile: Dockerfile
+      context: Backend
+    ports:
+      - 8080:8080
+    depends_on:
+      - icklist_database
