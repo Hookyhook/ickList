@@ -18,3 +18,9 @@ services:
       - 8080:8080
     depends_on:
       - icklist_database
+  icklist_frontend:
+    build:
+      dockerfile: Dockerfile
+      context: Frontend
+    ports:
+      - 3000:3000
