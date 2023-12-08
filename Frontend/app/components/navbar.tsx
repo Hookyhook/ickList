@@ -1,6 +1,6 @@
-import ThemeController from './themeController';
+import { ThemeController } from '@components';
 
-export default function Navbar() {
+export function Navbar() {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">

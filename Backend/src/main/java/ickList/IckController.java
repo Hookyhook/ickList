@@ -19,20 +19,24 @@ import lombok.AllArgsConstructor;
 public class IckController {
 
 	IckService ickService;
+
 	@GetMapping
-	public List<Ick> getIcks(){
+	public List<Ick> getIcks() {
 		return ickService.getIcks();
 	}
+
 	@GetMapping("/{id}")
-	public Optional<Ick> getIck(@PathVariable int id){
+	public Optional<Ick> getIck(@PathVariable int id) {
 		return ickService.getIck(id);
 	}
+
 	@PostMapping
-	public Ick postIck(@RequestBody Ick ick){
+	public Ick postIck(@RequestBody Ick ick) {
 		return ickService.postIck(ick);
 	}
+
 	@DeleteMapping("/{id}")
-	public void deleteIck(@PathVariable int id){
+	public void deleteIck(@PathVariable int id) {
 		ickService.deleteIck(id);
 	}
 

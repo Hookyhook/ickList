@@ -1,5 +1,9 @@
-import IckModal from './components/ickModal';
-import Stat from './components/stat';
+'use client';
+
+import { IckModal } from '@components';
+import { Stat } from '@components';
+
+import { openModal } from '@lib';
 
 export default function Home() {
   return (
@@ -13,7 +17,9 @@ export default function Home() {
               number={1000}
               development="More than 100 icks uploaded +24%"
             ></Stat>
-            <button className="btn btn-primary">New Ick</button>
+            <button className="btn btn-primary" onClick={openModal}>
+              New Ick
+            </button>
           </div>
         </div>
       </div>

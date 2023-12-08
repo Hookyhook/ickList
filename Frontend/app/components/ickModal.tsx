@@ -1,6 +1,6 @@
-export default function IckModal() {
+export function IckModal() {
   return (
-    <dialog id="my_modal_2" className="modal">
+    <dialog id="ickModal" className="modal">
       <div className="modal-box">
         <h3 className="font-bold text-xl mb-5">New Ick</h3>
         <div className="flex flex-col gap-7">
@@ -13,18 +13,18 @@ export default function IckModal() {
               placeholder="Ick Description"
             ></textarea>
           </label>
-          <select className="select select-bordered w-full max-w-xs">
-            <option disabled selected>
-              Which gender has this ick?
-            </option>
+          <select
+            className="select select-bordered w-full max-w-xs"
+            defaultValue={'Which gender has this ick?'}
+          >
             <option>Male</option>
             <option>Female</option>
             <option>General</option>
           </select>
-          <select className="select select-bordered w-full max-w-xs">
-            <option disabled selected>
-              What kind of ick is it?
-            </option>
+          <select
+            className="select select-bordered w-full max-w-xs"
+            defaultValue={'What kind of ick is it?'}
+          >
             <option>Ick</option>
             <option>ReverseIck</option>
           </select>

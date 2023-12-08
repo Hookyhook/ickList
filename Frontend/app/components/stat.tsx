@@ -4,7 +4,7 @@ interface StatProps {
   development: string;
 }
 
-export default function Stat({ title, number, development }: StatProps) {
+export function Stat({ title, number, development }: StatProps) {
   return (
     <div className="stats shadow">
       <div className="stat">
