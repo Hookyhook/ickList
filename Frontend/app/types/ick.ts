@@ -1,5 +1,5 @@
-import { Gender } from '@types';
-import { IckType } from '@types';
+import { Gender } from '.';
+import { IckType } from '.';
 
 export interface Ick {
   id: number;

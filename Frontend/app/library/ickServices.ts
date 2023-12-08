@@ -1,4 +1,4 @@
-import { Ick } from '@types';
+import { Ick } from '../types';
 import axios, { AxiosResponse } from 'axios';
 
 async function getIcks(): Promise<Ick[]> {
