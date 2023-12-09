@@ -1,3 +1,5 @@
+import { submitModal } from '@lib';
+
 export function IckModal() {
   return (
     <dialog id="ickModal" className="modal">
@@ -17,18 +19,20 @@ export function IckModal() {
             className="select select-bordered w-full max-w-xs"
             defaultValue={'Which gender has this ick?'}
           >
-            <option>Male</option>
-            <option>Female</option>
-            <option>General</option>
+            <option>MALE</option>
+            <option>FEMALE</option>
+            <option>GENERAL</option>
           </select>
           <select
             className="select select-bordered w-full max-w-xs"
             defaultValue={'What kind of ick is it?'}
           >
-            <option>Ick</option>
-            <option>ReverseIck</option>
+            <option>ICK</option>
+            <option>REVERSEICK</option>
           </select>
-          <button className="btn btn-primary">Submit</button>
+          <button className="btn btn-primary" onClick={submitModal}>
+            Submit
+          </button>
         </div>
       </div>
       <form method="dialog" className="modal-backdrop">

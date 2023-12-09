@@ -3,6 +3,7 @@ package ickList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/api/v1/ick")
 @AllArgsConstructor
+@CrossOrigin(origins = "*")
 public class IckController {
 
 	IckService ickService;
