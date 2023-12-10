@@ -21,3 +21,5 @@ npm-debug.log
 
 # Ignore .env files as they usually contain sensitive information
 .env
+
+/.gradle

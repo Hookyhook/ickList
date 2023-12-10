@@ -21,9 +21,9 @@ public class Ick {
 
 	String ickDescription;
 
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	Gender gender;
 
-	@Enumerated(EnumType.ORDINAL)
-	IckType icktype;
+	@Enumerated(EnumType.STRING)
+	IckType ickType;
 }

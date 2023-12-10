@@ -1,7 +1,7 @@
 import { createIck } from '@lib';
 import { Gender, Ick, IckType } from '@types';
 
-export function openModal() {
+export function openModal(): void {
   const modal: any = document.getElementById('ickModal');
 
   if (modal) {
@@ -9,7 +9,7 @@ export function openModal() {
   }
 }
 
-export function submitModal() {
+export function submitModal(): void {
   const { ickDescription, ickGender, ickType } = getModalElements();
   const valuesNotComplete =
     ickDescription.value === '' ||
@@ -20,13 +20,16 @@ export function submitModal() {
     return;
   }
 
+  const genderValue = ickGender.value as Gender;
+  const ickTypeValue = ickType.value as IckType;
   const ick: Ick = {
     id: 0,
     ickDescription: ickDescription.value,
-    gender: Gender[ickGender.value as keyof typeof Gender],
-    ickType: IckType[ickType.value as keyof typeof IckType],
+    gender: genderValue,
+    ickType: ickTypeValue,
   };
 
+  console.log(ick);
   createIck(ick);
 
   function getModalElements() {
