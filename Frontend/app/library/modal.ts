@@ -20,16 +20,13 @@ export function submitModal(): void {
     return;
   }
 
-  const genderValue = ickGender.value as Gender;
-  const ickTypeValue = ickType.value as IckType;
-  const ick: Ick = {
+  const ick: any = {
     id: 0,
     ickDescription: ickDescription.value,
-    gender: genderValue,
-    ickType: ickTypeValue,
+    gender: ickGender.value,
+    ickType: ickType.value,
   };
 
-  console.log(ick);
   createIck(ick);
 
   function getModalElements() {
