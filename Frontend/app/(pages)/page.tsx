@@ -3,9 +3,7 @@
 import { IckModal } from '@components';
 import { Stat } from '@components';
 
-import { getIcks, openModal } from '@lib';
-import { Ick } from '@types';
-import { useEffect, useState } from 'react';
+import { openModal } from '@lib';
 
 export default function Home() {
   return (
