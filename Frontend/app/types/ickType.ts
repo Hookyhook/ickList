@@ -1,4 +1,4 @@
 export enum IckType {
-  ICK = 'ICK',
-  REVERSEICK = 'REVERSEICK',
+  ICK,
+  REVERSEICK,
 }
