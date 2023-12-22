@@ -29,6 +29,6 @@ jobs:
           file: Frontend/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: "${{ secrets.REGISTRY_URL }}/groupup-frontend:latest"
+          tags: "${{ secrets.REGISTRY_URL }}ickList-frontend:latest"
           cache-from: "type=registry,ref=${{ secrets.REGISTRY_URL }}/groupup-frontend:buildcache"
           cache-to: "type=registry,ref=${{ secrets.REGISTRY_URL }}/groupup-frontend:buildcache,mode=max"
