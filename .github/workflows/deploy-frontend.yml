@@ -29,6 +29,6 @@ jobs:
           file: Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: "docker.codeclub.check24.fun/ickList-frontend:latest"
-          cache-from: "type=registry,ref=$docker.codeclub.check24.fun/ickList-frontend:buildcache"
-          cache-to: "type=registry,ref=docker.codeclub.check24.fun/ickList-frontend:buildcache,mode=max"
+          tags: "docker.codeclub.check24.fun/icklist-frontend:latest"
+          cache-from: "type=registry,ref=$docker.codeclub.check24.fun/icklist-frontend:buildcache"
+          cache-to: "type=registry,ref=docker.codeclub.check24.fun/icklist-frontend:buildcache,mode=max"
