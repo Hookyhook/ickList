@@ -17,7 +17,7 @@ jobs:
       - name: Login to private registry
         uses: docker/login-action@v2
         with:
-          registry: ${{ secrets.REGISTRY_URL }}
+          registry: docker.codeclub.check24.fun
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
       - name: Set up Docker Buildx
@@ -29,6 +29,6 @@ jobs:
           file: Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: "${{ secrets.REGISTRY_URL }}ickList-frontend:latest"
-          cache-from: "type=registry,ref=${{ secrets.REGISTRY_URL }}groupup-frontend:buildcache"
-          cache-to: "type=registry,ref=${{ secrets.REGISTRY_URL }}groupup-frontend:buildcache,mode=max"
+          tags: "docker.codeclub.check24.fun/ickList-frontend:latest"
+          cache-from: "type=registry,ref=$docker.codeclub.check24.fun/ickList-frontend:buildcache"
+          cache-to: "type=registry,ref=docker.codeclub.check24.fun/ickList-frontend:buildcache,mode=max"
