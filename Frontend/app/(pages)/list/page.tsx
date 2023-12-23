@@ -21,9 +21,9 @@ export default function Home() {
           </tr>
         </thead>
         <tbody>
-          {icks.map((ick) => {
+          {icks.map((ick, index) => {
             return (
-              <tr className="hover">
+              <tr className="hover" key={index}>
                 <td>{ick.ickDescription}</td>
                 <td>{ick.gender}</td>
                 <td>{ick.ickType}</td>
