@@ -27,6 +27,7 @@ RUN npm run build
 
 # Production image, copy all the files and run next
 FROM base AS runner
+COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 WORKDIR /app
 
 ENV NODE_ENV production
