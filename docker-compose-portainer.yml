@@ -11,16 +11,12 @@ services:
     restart: on-failure
   icklist_backend:
     network_mode: host
-    build:
-      dockerfile: Dockerfile
-      context: Backend
+    image: localhost:5000/icklist-backend:latest
     ports:
       - 8080:8080
     depends_on:
       - icklist_database
   icklist_frontend:
-    build:
-      dockerfile: Dockerfile
-      context: Frontend
+    image: localhost:5000/icklist-frontend:latest
     ports:
       - 3000:3000
