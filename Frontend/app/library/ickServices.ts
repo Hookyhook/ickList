@@ -7,7 +7,7 @@ const apiURL = process.env.API_URL
 
 async function getIcks(): Promise<Ick[]> {
   const response: AxiosResponse<Ick[]> = await axios.get(
-    process.env.API_URL + '/api/v1/ick'
+    apiURL + '/api/v1/ick'
   );
 
   return response.data;
@@ -15,14 +15,14 @@ async function getIcks(): Promise<Ick[]> {
 
 async function getIck(id: string): Promise<Ick> {
   const response: AxiosResponse<Ick> = await axios.get(
-    process.env.API_URL + `/api/v1/ick/${id}`
+    apiURL + `/api/v1/ick/${id}`
   );
   return response.data;
 }
 
 async function createIck(ick: Ick): Promise<Ick> {
   const response: AxiosResponse<Ick> = await axios.post(
-    process.env.API_URL + '/api/v1/ick',
+    apiURL + '/api/v1/ick',
     ick
   );
   return response.data;
