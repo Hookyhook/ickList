@@ -17,6 +17,8 @@ services:
     depends_on:
       - icklist_database
   icklist_frontend:
+    environment:
+      API_URL: api.icklist.justusvonvoss.me
     image: localhost:5000/icklist-frontend:latest
     ports:
       - 3000:3000
