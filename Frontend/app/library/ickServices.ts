@@ -3,7 +3,7 @@ import axios, { AxiosResponse } from 'axios';
 
 const apiURL = process.env.API_URL
   ? process.env.API_URL
-  : 'https://codeclub.check24.fun:8080';
+  : 'https://api.icklist.justusvonvoss.me/';
 
 async function getIcks(): Promise<Ick[]> {
   const response: AxiosResponse<Ick[]> = await axios.get(
