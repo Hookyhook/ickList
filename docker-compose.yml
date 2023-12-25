@@ -18,11 +18,11 @@ services:
       - 8080:8080
     depends_on:
       - icklist_database
-  icklist_frontend:
-    environment:
-      API_URL: api.icklist.justusvonvoss.me
-    build:
-      dockerfile: Dockerfile
-      context: Frontend
-    ports:
-      - 3000:3000
+  #icklist_frontend:
+  #  environment:
+  #    API_URL: api.icklist.justusvonvoss.me
+  #  build:
+  #    dockerfile: Dockerfile
+  #    context: Frontend
+  #  ports:
+  #    - 3000:3000

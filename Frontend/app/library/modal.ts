@@ -1,11 +1,19 @@
 import { createIck } from '@lib';
-import { Gender, Ick, IckType } from '@types';
+import { Ick } from '@types';
 
 export function openModal(): void {
   const modal: any = document.getElementById('ickModal');
 
   if (modal) {
     modal.showModal();
+  }
+}
+
+export function closeModal(): void {
+  const modal: any = document.getElementById('ickModal');
+
+  if (modal) {
+    modal.close();
   }
 }
 
@@ -27,7 +35,9 @@ export function submitModal(): void {
     ickType: ickType.value,
   };
 
-  createIck(ick);
+  createIck(ick).then(() => {
+    closeModal();
+  });
 
   function getModalElements() {
     const ickDescription = document.querySelector(
