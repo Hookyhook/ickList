@@ -11,7 +11,7 @@ services:
     restart: on-failure
   icklist_backend_int:
     environment:
-      DB_PORT: 20013
+      DB_PORT: jdbc:mysql://localhost:20013/ickList
     network_mode: host
     image: localhost:5000/icklist-backend-int:latest
     ports:
