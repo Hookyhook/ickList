@@ -2,6 +2,6 @@ export * from './ickModal';
 
 export * from './navbar';
 
-export * from './stat';
+export * from './statDisplay';
 
 export * from './themeController';
