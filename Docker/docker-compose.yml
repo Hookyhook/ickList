@@ -10,19 +10,13 @@ services:
       MYSQL_PASSWORD: secret
     restart: on-failure
   icklist_backend:
+    environment:
+      DB_URL: jdbc:mysql://localhost:3306/ickList
     network_mode: host
     build:
       dockerfile: Dockerfile
-      context: Backend
+      context: ../Backend
     ports:
       - 8080:8080
     depends_on:
       - icklist_database
-  #icklist_frontend:
-  #  environment:
-  #    API_URL: api.icklist.justusvonvoss.me
-  #  build:
-  #    dockerfile: Dockerfile
-  #    context: Frontend
-  #  ports:
-  #    - 3000:3000
