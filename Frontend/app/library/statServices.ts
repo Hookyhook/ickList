@@ -1,7 +1,7 @@
 import { Stat } from '@types';
 import axios, { AxiosResponse } from 'axios';
 
-const apiURL = process.env.API_URL;
+const apiURL = 'https://api.icklist.justusvonvoss.me';
 
 export async function getStat(): Promise<Stat> {
   const response: AxiosResponse<Stat> = await axios.get(
