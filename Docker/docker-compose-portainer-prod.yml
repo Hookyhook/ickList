@@ -1,5 +1,5 @@
 services:
-  icklist_database:
+  icklist_database_prod:
     image: mysql
     ports:
       - 20003:3306
@@ -9,7 +9,7 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_PASSWORD: secret
     restart: on-failure
-  icklist_backend:
+  icklist_backend_prod:
     environment:
       DB_PORT: jdbc:mysql://localhost:20003/ickList
     network_mode: host
@@ -18,7 +18,7 @@ services:
       - 20001:8080
     depends_on:
       - icklist_database
-  icklist_frontend:
+  icklist_frontend_prod:
     environment:
       API_URL: api.icklist.justusvonvoss.me
     image: localhost:5000/icklist-frontend:latest
