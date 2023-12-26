@@ -1,9 +1,7 @@
 import { Ick } from '../types';
 import axios, { AxiosResponse } from 'axios';
 
-const apiURL = process.env.API_URL
-  ? process.env.API_URL
-  : 'http://localhost:8080';
+const apiURL = process.env.API_URL;
 
 async function getIcks(): Promise<Ick[]> {
   const response: AxiosResponse<Ick[]> = await axios.get(
