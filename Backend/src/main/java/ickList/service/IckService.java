@@ -1,10 +1,12 @@
-package ickList;
+package ickList.service;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import ickList.data.IckRepository;
+import ickList.model.Ick;
 import lombok.AllArgsConstructor;
 
 @Service

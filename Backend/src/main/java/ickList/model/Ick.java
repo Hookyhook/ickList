@@ -1,4 +1,4 @@
-package ickList;
+package ickList.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
