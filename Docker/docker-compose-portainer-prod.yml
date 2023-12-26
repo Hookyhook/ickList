@@ -11,8 +11,7 @@ services:
     restart: on-failure
   icklist_backend_prod:
     environment:
-      DB_URL: jdbc:mysql://localhost:20003/ickList
-    network_mode: host
+      DB_URL: jdbc:mysql://89.191.68.204:20003/ickList
     image: localhost:5000/icklist-backend:latest
     ports:
       - 20001:8080
