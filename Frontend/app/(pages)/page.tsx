@@ -14,7 +14,7 @@ export default function Home() {
     getStat().then((stat: Stat) => {
       setStat(stat);
     });
-  });
+  }, [setStat]);
 
   return (
     <>
