@@ -19,7 +19,7 @@ services:
       - icklist_database_prod
   icklist_frontend_prod:
     environment:
-      API_URL: api.icklist.justusvonvoss.me
+      NEXT_PUBLIC_API_URL: api.icklist.justusvonvoss.me
     image: localhost:5000/icklist-frontend:latest
     ports:
       - 20002:3000

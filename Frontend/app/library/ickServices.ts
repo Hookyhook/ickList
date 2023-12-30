@@ -1,7 +1,7 @@
 import { Ick } from '../types';
 import axios, { AxiosResponse } from 'axios';
 
-const apiURL = 'https://api.icklist.justusvonvoss.me';
+const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
 async function getIcks(): Promise<Ick[]> {
   const response: AxiosResponse<Ick[]> = await axios.get(

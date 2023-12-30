@@ -9,7 +9,7 @@ export default function Home() {
 
   useEffect(() => {
     getIcks().then((icks) => setIcks(icks));
-  });
+  }, [setIcks]);
   return (
     <div className="overflow-x-auto w-auto">
       <table className="table">

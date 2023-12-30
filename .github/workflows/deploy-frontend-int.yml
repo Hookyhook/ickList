@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: Frontend
-          file: Frontend/Dockerfile
+          file: Frontend/Docker/Dockerfile.int
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: "docker.codeclub.check24.fun/icklist-frontend-int:latest"
