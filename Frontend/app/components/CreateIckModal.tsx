@@ -1,6 +1,6 @@
 import { submitModal } from '@lib';
 
-export function IckModal() {
+export function CreateIckModal() {
   return (
     <dialog id="ickModal" className="modal">
       <div className="modal-box">

@@ -1,7 +1,5 @@
-export * from './ickModal';
+export * from './CreateIckModal';
 
-export * from './navbar';
+export * from './Navbar';
 
-export * from './statDisplay';
-
-export * from './themeController';
+export * from './StatDisplay';

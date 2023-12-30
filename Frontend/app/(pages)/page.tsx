@@ -1,6 +1,6 @@
 'use client';
 
-import { IckModal } from '@components';
+import { CreateIckModal } from '@components';
 import { StatDisplay } from '@components';
 
 import { openModal, getStat } from '@lib';
@@ -35,7 +35,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <IckModal></IckModal>
+      <CreateIckModal></CreateIckModal>
     </>
   );
 }
