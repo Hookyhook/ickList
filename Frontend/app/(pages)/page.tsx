@@ -1,3 +1,5 @@
+'use client';
+
 import { StatDisplay } from '@components';
 
 import { getStat } from '@lib';
