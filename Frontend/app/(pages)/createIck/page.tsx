@@ -1,8 +1,53 @@
 'use client';
 
-import { submitIck } from '@lib';
+import { createIck } from '@lib';
+import { useSearchParams, useRouter } from 'next/navigation';
 
 export default function CreateIck() {
+  const router = useRouter();
+
+  const priorPage = useSearchParams().get('source') || '/';
+  function submitIck(): void {
+    const { ickDescription, ickGender, ickType } = getModalElements();
+    const valuesNotComplete =
+      ickDescription.value === '' ||
+      ickGender.value === '' ||
+      ickType.value === '';
+
+    if (valuesNotComplete) {
+      return;
+    }
+
+    const ick: any = {
+      id: 0,
+      ickDescription: ickDescription.value,
+      gender: ickGender.value,
+      ickType: ickType.value,
+    };
+
+    createIck(ick).then(() => {
+      redirectToPriorPage();
+    });
+
+    function redirectToPriorPage() {
+      router.push(priorPage);
+    }
+
+    function getModalElements() {
+      const ickDescription = document.querySelector(
+        '.textarea'
+      ) as HTMLTextAreaElement;
+      const ickGender = document.querySelector(
+        '.select:nth-of-type(1)'
+      ) as HTMLSelectElement;
+      const ickType = document.querySelector(
+        '.select:nth-of-type(2)'
+      ) as HTMLSelectElement;
+
+      return { ickDescription, ickGender, ickType };
+    }
+  }
+
   return (
     <>
       <h3 className="font-bold text-xl mb-5">New Ick</h3>
