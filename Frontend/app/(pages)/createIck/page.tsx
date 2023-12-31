@@ -1,12 +1,11 @@
 'use client';
 
 import { createIck } from '@lib';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export default function CreateIck() {
   const router = useRouter();
 
-  const priorPage = useSearchParams().get('source') || '/';
   function submitIck(): void {
     const { ickDescription, ickGender, ickType } = getModalElements();
     const valuesNotComplete =
@@ -30,7 +29,7 @@ export default function CreateIck() {
     });
 
     function redirectToPriorPage() {
-      router.push(priorPage);
+      router.back();
     }
 
     function getModalElements() {
