@@ -1,5 +1,5 @@
 export * from './ickServices';
 
-export * from './modal';
+export * from './createIckForm';
 
 export * from './statServices';
