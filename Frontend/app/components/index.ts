@@ -1,5 +1,5 @@
-export * from './Navbar';
+export * from './molecules/Navbar';
 
-export * from './StatDisplay';
+export * from './molecules/StatDisplay';
 
-export * from './NewIckButton';
+export * from './atoms/NewIckButton';
