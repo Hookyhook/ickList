@@ -1,10 +1,10 @@
 'use client';
 
-import { IckModal } from '@components';
 import { StatDisplay } from '@components';
 
-import { openModal, getStat } from '@lib';
+import { getStat } from '@lib';
 import { Stat } from '@types';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -29,13 +29,12 @@ export default function Home() {
                 development={`Last month the number of icks developed by ${stat.ickMonthlyChangePercents}%`}
               ></StatDisplay>
             )}
-            <button className="btn btn-primary" onClick={openModal}>
+            <Link className="btn btn-primary" href={'/createIck'}>
               New Ick
-            </button>
+            </Link>
           </div>
         </div>
       </div>
-      <IckModal></IckModal>
     </>
   );
 }

@@ -1,7 +1,5 @@
-export * from './ickModal';
+export * from './molecules/Navbar';
 
-export * from './navbar';
+export * from './molecules/StatDisplay';
 
-export * from './statDisplay';
-
-export * from './themeController';
+export * from './atoms/NewIckButton';

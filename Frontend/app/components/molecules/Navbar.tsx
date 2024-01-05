@@ -1,4 +1,3 @@
-import { ThemeController } from '@components';
 import Link from 'next/link';
 
 export function Navbar() {
@@ -11,11 +10,10 @@ export function Navbar() {
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
-          <Link className="btn btn-ghost text-xl" href="/list">
-            List
+          <Link className="btn btn-primary text-xl" href="/list">
+            All Icks
           </Link>
         </div>
-        <ThemeController></ThemeController>
       </div>
     </div>
   );
