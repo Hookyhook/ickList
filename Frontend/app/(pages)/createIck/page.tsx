@@ -48,8 +48,8 @@ export default function CreateIck() {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="w-full mx-auto p-6 bg-blend-darken shadow-lg rounded-lg">
+    <div className="flex justify-center items-center">
+      <div className="w-full mx-auto p-6 shadow-lg rounded-lg bg-transparent">
         <h3 className="font-bold text-3xl mb-5 text-center text-primary">
           New Ick
         </h3>
@@ -63,21 +63,24 @@ export default function CreateIck() {
               placeholder="Ick Description"
             ></textarea>
           </label>
-          <select
-            className="select select-bordered w-full max-w-xs"
-            defaultValue={'Which gender has this ick?'}
-          >
-            <option>MALE</option>
-            <option>FEMALE</option>
-            <option>GENERAL</option>
-          </select>
-          <select
-            className="select select-bordered w-full max-w-xs"
-            defaultValue={'What kind of ick is it?'}
-          >
-            <option>ICK</option>
-            <option>REVERSEICK</option>
-          </select>
+          <div className="flex flex-row gap-7 flex-wrap">
+            <select
+              className="select select-bordered min-w-[200px] flex-grow"
+              defaultValue={'Which gender has this ick?'}
+            >
+              <option>MALE</option>
+              <option>FEMALE</option>
+              <option>GENERAL</option>
+            </select>
+            <select
+              className="select select-bordered min-w-[200px] flex-grow"
+              defaultValue={'What kind of ick is it?'}
+            >
+              <option>ICK</option>
+              <option>REVERSEICK</option>
+            </select>
+          </div>
+
           <button className="btn btn-primary" onClick={submitIck}>
             Submit
           </button>
