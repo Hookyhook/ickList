@@ -4,6 +4,8 @@ import { getIcks } from '@lib';
 import { Ick } from '@types';
 import { useEffect, useState } from 'react';
 
+import { ListElement } from '@components';
+
 export default function Home() {
   const [icks, setIcks] = useState<Ick[]>([]);
 
@@ -22,13 +24,7 @@ export default function Home() {
         </thead>
         <tbody>
           {icks.map((ick, index) => {
-            return (
-              <tr className="hover" key={index}>
-                <td>{ick.ickDescription}</td>
-                <td>{ick.gender}</td>
-                <td>{ick.ickType}</td>
-              </tr>
-            );
+            return <ListElement ick={ick} index={index}></ListElement>;
           })}
         </tbody>
       </table>
