@@ -26,4 +26,12 @@ async function createIck(ick: Ick): Promise<Ick> {
   return response.data;
 }
 
+async function updateIck(ick: Ick): Promise<Ick> {
+  const response: AxiosResponse<Ick> = await axios.put(
+    apiURL + '/api/v1/ick',
+    ick
+  );
+  return response.data;
+}
+
 export { getIcks, getIck, createIck };
