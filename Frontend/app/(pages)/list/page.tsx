@@ -24,7 +24,7 @@ export default function Home() {
         </thead>
         <tbody>
           {icks.map((ick, index) => {
-            return <ListElement ick={ick} index={index}></ListElement>;
+            return <ListElement ick={ick} key={index}></ListElement>;
           })}
         </tbody>
       </table>

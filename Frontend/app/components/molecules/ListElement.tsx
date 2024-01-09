@@ -1,19 +1,19 @@
 import { Ick } from '@types';
 
-import { EditIckButton } from '@components';
+import { DeleteIckButton, EditIckButton } from '@components';
 interface ListElementProps {
   ick: Ick;
-  index: number;
 }
 
-export function ListElement({ ick, index }: ListElementProps) {
+export function ListElement({ ick }: ListElementProps) {
   return (
-    <tr className="hover" key={index}>
+    <tr className="hover">
       <td>{ick.ickDescription}</td>
       <td>{ick.gender}</td>
       <td>{ick.ickType}</td>
-      <td className=" justify-end flex pr-3">
+      <td className=" justify-end flex pr-3 gap-3">
         <EditIckButton />
+        <DeleteIckButton />
       </td>
     </tr>
   );
