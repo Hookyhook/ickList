@@ -1,12 +1,18 @@
 'use client';
 
-import { deleteIck } from '@lib';
 interface DeleteButtonProps {
   ickId: number;
+  handleDeleteIckButtonClick: (ickId: number) => void;
 }
-export function DeleteIckButton({ ickId }: DeleteButtonProps) {
+export function DeleteIckButton({
+  ickId,
+  handleDeleteIckButtonClick,
+}: DeleteButtonProps) {
   return (
-    <button onClick={() => deleteIck(ickId)} className="btn btn-error">
+    <button
+      onClick={() => handleDeleteIckButtonClick(ickId)}
+      className="btn btn-error"
+    >
       Remove
     </button>
   );
