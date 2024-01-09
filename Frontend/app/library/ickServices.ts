@@ -34,4 +34,11 @@ async function updateIck(ick: Ick): Promise<Ick> {
   return response.data;
 }
 
-export { getIcks, getIck, createIck };
+async function deleteIck(id: number): Promise<Ick> {
+  const response: AxiosResponse<Ick> = await axios.delete(
+    apiURL + `/api/v1/ick/${id}`
+  );
+  return response.data;
+}
+
+export { getIcks, getIck, createIck, deleteIck };
