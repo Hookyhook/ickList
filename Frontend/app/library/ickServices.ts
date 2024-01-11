@@ -41,4 +41,4 @@ async function deleteIck(id: number): Promise<Ick> {
   return response.data;
 }
 
-export { getIcks, getIck, createIck, deleteIck };
+export { getIcks, getIck, createIck, deleteIck, updateIck };

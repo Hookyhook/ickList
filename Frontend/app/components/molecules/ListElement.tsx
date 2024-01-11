@@ -16,7 +16,7 @@ export function ListElement({
       <td>{ick.gender}</td>
       <td>{ick.ickType}</td>
       <td className=" justify-end flex pr-3 gap-3">
-        <EditIckButton />
+        <EditIckButton ickId={ick.id} />
         <DeleteIckButton
           handleDeleteIckButtonClick={handleDeleteIckButtonClick}
           ickId={ick.id}
