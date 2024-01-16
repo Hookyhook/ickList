@@ -1,5 +1,6 @@
 services:
   icklist_database_int:
+    container_name: icklist_database-int
     image: mysql
     ports:
       - 20013:3306
@@ -9,7 +10,10 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_PASSWORD: secret
     restart: on-failure
+    volumes:
+      - database:/var/lib/mysql
   icklist_backend_int:
+    container_name: icklist_backend-int
     environment:
       DB_URL: jdbc:mysql://89.191.68.204:20013/ickList
     image: localhost:5000/icklist-backend-int:latest
@@ -17,9 +21,15 @@ services:
       - 20011:8080
     depends_on:
       - icklist_database_int
+    volumes:
+      - backend:/home/gradle/.gradle
   icklist_frontend_int:
+    container_name: icklist_frontend-int
     environment:
       NEXT_PUBLIC_API_URL: api.icklist-int.justusvonvoss.me
     image: localhost:5000/icklist-frontend-int:latest
     ports:
       - 20012:3000
+volumes:
+  database:
+  backend:
