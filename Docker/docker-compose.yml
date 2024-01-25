@@ -1,5 +1,6 @@
 services:
   icklist_database:
+    container_name: icklist_database-local
     image: mysql
     ports:
       - 3306:3306
@@ -9,7 +10,10 @@ services:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_PASSWORD: secret
     restart: on-failure
+    volumes:
+      - database:/var/lib/mysql
   icklist_backend:
+    container_name: icklist_backend-local
     environment:
       DB_URL: jdbc:mysql://localhost:3306/ickList
     network_mode: host
@@ -20,3 +24,8 @@ services:
       - 8080:8080
     depends_on:
       - icklist_database
+    volumes:
+      - backend:/home/gradle/.gradle
+volumes:
+  database:
+  backend:
