@@ -4,9 +4,11 @@ import { getIcks, deleteIck } from '@lib';
 import { Ick } from '@types';
 import { useEffect, useState } from 'react';
 
+
 import { ListElement, ListInteractionHeader } from '@components';
 
 import Fuse from 'fuse.js';
+
 
 export default function Home() {
   const [icks, setIcks] = useState<Ick[]>([]);
@@ -24,6 +26,7 @@ export default function Home() {
       getIcks().then((icks) => setIcks(icks));
     });
   };
+
 
   const handleSearchInput = (searchText: string) => {
     const emptySearch = searchText.length === 0;
@@ -56,6 +59,7 @@ export default function Home() {
       originalIcks.filter((ick: Ick) => ick.gender.toString() === selectedValue)
     );
   };
+
   return (
     <div className="overflow-x-auto w-auto">
       <table className="table">
