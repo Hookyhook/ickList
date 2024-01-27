@@ -9,3 +9,8 @@ export * from './molecules/ListElement';
 export * from './atoms/EditIckButton';
 
 export * from './atoms/DeleteIckButton';
+
+export * from './molecules/ListInteractionHeader';
+
+export * from './atoms/Dropdown';
+
