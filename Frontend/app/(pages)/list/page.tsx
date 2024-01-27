@@ -4,7 +4,7 @@ import { getIcks, deleteIck } from '@lib';
 import { Ick } from '@types';
 import { useEffect, useState } from 'react';
 
-import { ListElement } from '@components';
+import { ListElement, ListInteractionHeader } from '@components';
 
 export default function Home() {
   const [icks, setIcks] = useState<Ick[]>([]);
@@ -22,10 +22,11 @@ export default function Home() {
     <div className="overflow-x-auto w-auto">
       <table className="table">
         <thead>
+          <ListInteractionHeader></ListInteractionHeader>
           <tr>
-            <th>Ick Description</th>
-            <th>Gender</th>
-            <th>Icktype</th>
+            <th className="w-5/12">Ick Description</th>
+            <th className="w-1/12">Gender</th>
+            <th className="">Icktype</th>
           </tr>
         </thead>
         <tbody>
