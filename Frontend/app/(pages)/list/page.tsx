@@ -1,14 +1,12 @@
 'use client';
 
 import { getIcks, deleteIck } from '@lib';
-import { Ick } from '@types';
+import { Gender, Ick, IckType } from '@types';
 import { useEffect, useState } from 'react';
-
 
 import { ListElement, ListInteractionHeader } from '@components';
 
 import Fuse from 'fuse.js';
-
 
 export default function Home() {
   const [icks, setIcks] = useState<Ick[]>([]);
@@ -26,7 +24,6 @@ export default function Home() {
       getIcks().then((icks) => setIcks(icks));
     });
   };
-
 
   const handleSearchInput = (searchText: string) => {
     const emptySearch = searchText.length === 0;
@@ -47,6 +44,11 @@ export default function Home() {
   };
 
   const handleIckTypeSelect = (selectedValue: string) => {
+    const selectedValueInEnum = selectedValue in IckType;
+    if (!selectedValueInEnum) {
+      setIcks(originalIcks);
+      return;
+    }
     setIcks(
       originalIcks.filter(
         (ick: Ick) => ick.ickType.toString() === selectedValue
@@ -55,6 +57,11 @@ export default function Home() {
   };
 
   const handleGenderSelect = (selectedValue: string) => {
+    const selectedValueInEnum = selectedValue in Gender;
+    if (!selectedValueInEnum) {
+      setIcks(originalIcks);
+      return;
+    }
     setIcks(
       originalIcks.filter((ick: Ick) => ick.gender.toString() === selectedValue)
     );
