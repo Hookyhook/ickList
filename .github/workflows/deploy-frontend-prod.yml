@@ -29,4 +29,4 @@ jobs:
           file: Frontend/Docker/Dockerfile.prod
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: "${{ secrets.REGISTRY_URL }}/icklist-frontend:1.0"
+          tags: "${{ secrets.REGISTRY_URL }}/icklist-frontend:1.8"
