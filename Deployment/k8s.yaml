@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: icklist-backend
+  labels:
+    app: icklist-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: icklist-backend
+  template:
+    metadata:
+      labels:
+        app: icklist-backend
+    spec:
+      containers:
+        - name: icklist-backend
+          image: registry.lab.lcarilla.de/icklist-backend:latest
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - secretRef:
+                name: mysql-sto
+          env:
+            - name: MYSQL_URL
+              value: "jdbc:mysql://sto-01:3306"
+      imagePullSecrets:
+        - name: lab-registry
