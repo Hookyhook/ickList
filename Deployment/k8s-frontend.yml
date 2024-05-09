@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: icklist-frontend
-          image: registry.lab.lcarilla.de/icklist-frontend:1.8
+          image: registry.lab.lcarilla.de/icklist-frontend:1.123
           imagePullPolicy: Always
       imagePullSecrets:
         - name: lab-registry
