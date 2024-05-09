@@ -23,7 +23,7 @@ spec:
                 name: mysql-sto
           env:
             - name: MYSQL_URL
-              value: "jdbc:mysql://sto-01:3306"
+              value: "jdbc:mysql://sto-01:3306/icklist"
       imagePullSecrets:
         - name: lab-registry
 ---
