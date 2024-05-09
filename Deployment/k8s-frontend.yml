@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: icklist-frontend
+  labels:
+    app: icklist-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: icklist-frontend
+  template:
+    metadata:
+      labels:
+        app: icklist-frontend
+    spec:
+      containers:
+        - name: icklist-frontend
+          image: registry.lab.lcarilla.de/icklist-frontend:1.0
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: lab-registry
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: icklist-frontend
+spec:
+  selector:
+    app: icklist-frontend
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: icklist-frontend
+spec:
+  tls:
+    - hosts:
+        - icklist.justusvonvoss.me
+      secretName: icklist-frontend-cert
+  rules:
+    - host: "icklist.justusvonvoss.me"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: icklist-frontend
+                port:
+                  number: 80
