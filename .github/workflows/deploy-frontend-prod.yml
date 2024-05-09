@@ -13,7 +13,7 @@ jobs:
       - name: Use Node.js 18.1
         uses: actions/setup-node@v3
         with:
-          node-version: "18.1"
+          node-version: "20.9"
       - name: Login to private registry
         uses: docker/login-action@v2
         with:
