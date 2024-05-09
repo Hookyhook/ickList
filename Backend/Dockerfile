@@ -1,20 +1,19 @@
-# Use a base image with Java 17 and Gradle pre-installed
-FROM gradle:7.5.1-jdk17
+FROM eclipse-temurin:21-jdk-alpine as cleaner
 
-# Set the working directory inside the container
-WORKDIR /app
+COPY gradlew gradlew.bat settings.gradle ./
 
-# Copy the Gradle build files and settings to the container
-COPY build.gradle .
-COPY settings.gradle .
-COPY gradlew .
 COPY gradle ./gradle
 
+COPY Backend ./Backend
 
-COPY src ./src
+RUN ./gradlew clean
 
+FROM cleaner as builder
 
-EXPOSE 8080
+RUN ./gradlew bootJar
 
-# Specify the command to run the Spring Boot application when the container starts
-CMD ["./gradlew", "bootRun"]
+FROM eclipse-temurin:21-jre-alpine as runner
+
+COPY --from=builder /home/gradle/Backend/build/libs/*.jar app.jar
+
+ENTRYPOINT ["java","-jar","app.jar"]

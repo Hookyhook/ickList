@@ -17,7 +17,7 @@ spec:
       containers:
         - name: icklist-backend
           image: registry.lab.lcarilla.de/icklist-backend:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           envFrom:
             - secretRef:
                 name: mysql-sto
@@ -26,3 +26,40 @@ spec:
               value: "jdbc:mysql://sto-01:3306"
       imagePullSecrets:
         - name: lab-registry
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: icklist-backend
+spec:
+  selector:
+    app: icklist-backend
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: icklist-backend
+spec:
+  tls:
+    - hosts:
+        - api.icklist.justusvonvoss.me
+      secretName: icklist-backend-cert
+  rules:
+    - host: "api.icklist.justusvonvoss.me"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: icklist-backend
+                port:
+                  number: 80
