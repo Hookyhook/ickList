@@ -14,6 +14,6 @@ RUN ./gradlew bootJar
 
 FROM eclipse-temurin:21-jre-alpine as runner
 
-COPY --from=builder /home/gradle/Backend/build/libs/*.jar app.jar
+COPY --from=builder ./Backend/build/libs/*.jar app.jar
 
 ENTRYPOINT ["java","-jar","app.jar"]
