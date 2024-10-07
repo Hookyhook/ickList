@@ -19,7 +19,7 @@ spec:
           image: docker.lab.qstetten.de/icklist-frontend:1.123
           imagePullPolicy: Always
       imagePullSecrets:
-        - name: lab-registry
+        - name: regcred
 ---
 kind: Service
 apiVersion: v1
