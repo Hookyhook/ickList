@@ -25,7 +25,7 @@ spec:
             - name: MYSQL_URL
               value: "jdbc:mysql://sto-01:3306/icklist"
       imagePullSecrets:
-        - name: lab-registry
+        - name: regcred
 ---
 kind: Service
 apiVersion: v1
