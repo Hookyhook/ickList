@@ -19,7 +19,7 @@ jobs:
       - name: Login to private registry
         uses: docker/login-action@v2
         with:
-          registry: ${{ secrets.REGISTRY_URL }}
+          registry: docker.lab.qstetten.de
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
       - name: Set up Docker Buildx
@@ -31,10 +31,10 @@ jobs:
           file: Frontend/Docker/Dockerfile.prod
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: "${{ secrets.REGISTRY_URL }}/icklist-frontend:${{ github.sha }}"
+          tags: "docker.lab.qstetten.de/icklist-frontend:${{ github.sha }}"
       - name: Run script file
         run: |
-         sed -i 's|docker\.lab\.qstetten\.de/icklist-backend:[^[:space:]]*|${{ secrets.REGISTRY_URL }}/icklist-backend:${{ github.sha }}|' Deployment/k8s-frontend.yaml
+         sed -i 's|docker\.lab\.qstetten\.de/icklist-backend:[^[:space:]]*|docker.lab.qstetten.de/icklist-backend:${{ github.sha }}|' Deployment/k8s-frontend.yaml
          cat Deployment/k8s-frontend.yaml
         shell: bash
       - uses: stefanzweifel/git-auto-commit-action@v5
