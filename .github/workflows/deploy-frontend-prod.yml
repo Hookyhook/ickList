@@ -34,6 +34,8 @@ jobs:
           tags: "${{ secrets.REGISTRY_URL }}/icklist-frontend:${{ github.sha }}"
       - name: Run script file
         run: |
-         sed -i 's|docker\.lab\.qstetten\.de/icklist-backend:[^[:space:]]*|docker.lab.qstetten.de/icklist-backend:${{ github.sha }}|' Deployment/k8s-frontend.yaml
+         sed -i 's|docker\.lab\.qstetten\.de/icklist-backend:[^[:space:]]*|docker.lab.qstetten.de/icklist-backend:${{ github.sha }}|' k8s-frontend.yaml
         shell: bash
+        with:
+          context: ./Deployment
       - uses: stefanzweifel/git-auto-commit-action@v5
