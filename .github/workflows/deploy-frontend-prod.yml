@@ -32,3 +32,8 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: "${{ secrets.REGISTRY_URL }}/icklist-frontend:${{ github.sha }}"
+      - name: Run script file
+        run: |
+         sed -i 's|docker\.lab\.qstetten\.de/icklist-backend:[^[:space:]]*|docker.lab.qstetten.de/icklist-backend:${{ github.sha }}|' deployment.yaml
+        shell: bash
+      - uses: stefanzweifel/git-auto-commit-action@v5
