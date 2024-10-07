@@ -35,6 +35,6 @@ jobs:
       - name: Run script file
         run: |
          ls && pwd &&
-         sed -i 's|docker\.lab\.qstetten\.de/icklist-backend:[^[:space:]]*|docker.lab.qstetten.de/icklist-backend:${{ github.sha }}|' k8s-frontend.yaml
+         sed -i 's|docker\.lab\.qstetten\.de/icklist-backend:[^[:space:]]*|docker.lab.qstetten.de/icklist-backend:${{ github.sha }}|' Deployment/k8s-frontend.yaml
         shell: bash
       - uses: stefanzweifel/git-auto-commit-action@v5
