@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: icklist-frontend
-          image: docker.lab.qstetten.de/icklist-frontend:bd7ab1cd53d17f2cd9f97431b5d55a0aeddd2800
+          image: docker.lab.qstetten.de/icklist-frontend:2cd99872f121bb4ba85a115db3c3a521eab5f16e
           imagePullPolicy: Always
       imagePullSecrets:
         - name: regcred
