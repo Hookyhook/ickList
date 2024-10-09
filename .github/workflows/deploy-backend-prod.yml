@@ -40,8 +40,8 @@ jobs:
         shell: bash
       - name: Commit updated k8s ressource
         run: |
-          git config --global user.name 'IckListDeploymentManagement'
-          git config --global user.email 'deployment@users.noreply.github.com'
+          git config --global user.name '${{ secrets.DEPLOYMENT_NAME }}'
+          git config --global user.email '${{ secrets.DEPLOYMENT_EMAIL }}'
           git add Deployment/k8s-backend.yaml
           git commit -m 'Updatet backend image to ${{ github.sha }}'
           git push
