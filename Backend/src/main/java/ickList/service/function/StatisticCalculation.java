@@ -18,7 +18,7 @@ public class StatisticCalculation implements Function<List<Ick>, Integer> {
             .toArray().length;
         int oldIcks = Icks.stream().filter(ick -> ick.getCreatedOn().atZone(ZoneId.systemDefault()).getMonth() != currentMonth)
             .toArray().length;
-        if(oldIcks == 0){
+        if (oldIcks == 0) {
             return 100;
         }
         return newIcksThisMonth / oldIcks;
