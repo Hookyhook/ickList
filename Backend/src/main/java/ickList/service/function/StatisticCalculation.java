@@ -3,10 +3,8 @@ package ickList.service.function;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.ZoneId;
-import java.util.Calendar;
 import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Stream;
 
 import ickList.model.Ick;
 
@@ -20,6 +18,9 @@ public class StatisticCalculation implements Function<List<Ick>, Integer> {
             .toArray().length;
         int oldIcks = Icks.stream().filter(ick -> ick.getCreatedOn().atZone(ZoneId.systemDefault()).getMonth() != currentMonth)
             .toArray().length;
-        return newIcksThisMonth / (oldIcks == 0 ? 100 : oldIcks);
+        if(oldIcks == 0){
+            return 100;
+        }
+        return newIcksThisMonth / oldIcks;
     }
 }
