@@ -50,10 +50,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - api.icklist.justusvonvoss.me
+        - api.icklist.vonvoss.de
       secretName: icklist-backend-cert
   rules:
-    - host: "api.icklist.justusvonvoss.me"
+    - host: "api.icklist.vonvoss.de"
       http:
         paths:
           - pathType: Prefix

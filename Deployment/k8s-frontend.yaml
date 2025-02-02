@@ -43,10 +43,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - icklist.justusvonvoss.me
+        - icklist.vonvoss.de
       secretName: icklist-frontend-cert
   rules:
-    - host: "icklist.justusvonvoss.me"
+    - host: "icklist.vonvoss.de"
       http:
         paths:
           - pathType: Prefix
