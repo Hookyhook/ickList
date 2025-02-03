@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ickList.service.IckService;
 import ickList.model.Ick;
+import ickList.service.IckService;
 import lombok.AllArgsConstructor;
 
 @RestController
