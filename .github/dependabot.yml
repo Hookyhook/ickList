@@ -9,3 +9,7 @@ updates:
     directory: "Frontend" # Location of package manifests
     schedule:
       interval: "weekly"
+  - package-system: gradle
+      directory: "Backend"
+      schedule:
+        interval: "weekly"
