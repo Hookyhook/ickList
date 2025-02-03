@@ -10,6 +10,6 @@ updates:
     schedule:
       interval: "weekly"
   - package-system: gradle
-      directory: "Backend"
-      schedule:
-        interval: "weekly"
+    directory: "Backend"
+    schedule:
+      interval: "weekly"
