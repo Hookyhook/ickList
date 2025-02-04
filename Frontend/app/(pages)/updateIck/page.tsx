@@ -14,6 +14,7 @@ export default async function UpdateIck({ searchParams }: Readonly<PageProps>) {
   const ick = await getIck(ickId);
 
   async function updateIckAction(formData: FormData) {
+    "use server";
     const ickDescription = formData.get('ickDescription') as string;
     const gender = formData.get('gender') as unknown as Gender;
     const ickType = formData.get('ickType') as unknown as IckType;
