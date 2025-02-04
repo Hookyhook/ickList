@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: icklist-backend
-          image: docker.lab.qstetten.de/icklist-backend:7ef0754a21555997a4f6da2fbee6c1d8fa1d6f80
+          image: docker.lab.qstetten.de/icklist-backend:838c6b06dea6ab7371dd067a50e1e315886dfcbf
           imagePullPolicy: Always
           envFrom:
             - secretRef:
