@@ -1,5 +1,6 @@
 import { getIck, updateIck } from '@lib';
 import { redirect } from 'next/navigation';
+import {Gender, IckType} from "@types";
 
 interface PageProps {
   searchParams: Promise<{
@@ -14,8 +15,8 @@ export default async function UpdateIck({ searchParams }: Readonly<PageProps>) {
 
   async function updateIckAction(formData: FormData) {
     const ickDescription = formData.get('ickDescription') as string;
-    const gender = formData.get('gender');
-    const ickType = formData.get('ickType');
+    const gender = formData.get('gender') as unknown as Gender;
+    const ickType = formData.get('ickType') as unknown as IckType;
 
     if (!ickDescription || !gender || !ickType || !ickId) {
       return;
