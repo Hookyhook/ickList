@@ -29,7 +29,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./Backend
-          file: Dockerfile
+          file: ./Backend/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: "docker.lab.qstetten.de/icklist-backend:${{ github.sha }}"
