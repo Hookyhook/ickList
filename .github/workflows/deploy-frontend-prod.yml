@@ -2,7 +2,7 @@ name: Deploy Frontend Prod
 on:
   push:
     branches:
-      - main
+      - counter
     paths:
       - 'Frontend/**'
   workflow_dispatch:
