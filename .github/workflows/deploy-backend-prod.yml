@@ -2,7 +2,7 @@ name: Deploy Backend Prod
 on:
   push:
     branches:
-      - main
+      - counter
     paths:
       - 'Backend/**'
   workflow_dispatch:
