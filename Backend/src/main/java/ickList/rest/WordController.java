@@ -17,7 +17,7 @@ import ickList.service.WordService;
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping("/api/v1/stat")
+@RequestMapping("/api/v1/word")
 @AllArgsConstructor
 @CrossOrigin(origins = "*")
 public class WordController {
