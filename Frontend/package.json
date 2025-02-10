@@ -12,12 +12,12 @@
     "axios": "^1.7.7",
     "fuse.js": "^7.0.0",
     "next": "15.1.6",
-    "react": "^18",
+    "react": "^19",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^22",
-    "@types/react": "^18",
+    "@types/react": "^19",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.20",
     "daisyui": "^4.12.23",
