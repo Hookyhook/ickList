@@ -57,3 +57,27 @@ spec:
                 name: icklist-frontend
                 port:
                   number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: icklist-frontend
+spec:
+  tls:
+    - hosts:
+        - icklist.justusvonvoss.de
+      secretName: icklist2-frontend-cert
+  rules:
+    - host: "icklist.justusvonvoss.de"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: icklist-frontend
+                port:
+                  number: 80
