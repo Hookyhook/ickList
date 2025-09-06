@@ -52,8 +52,6 @@ spec:
   tls:
     - hosts:
         - api.icklist.vonvoss.de
-      secretName: icklist-backend-cert
-    - hosts:
         - api.icklist.justusvonvoss.de
       secretName: icklist2-backend-cert
   rules:
